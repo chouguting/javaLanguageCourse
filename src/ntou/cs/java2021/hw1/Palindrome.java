@@ -10,33 +10,33 @@ public class Palindrome {
         return value;
     }
 
-    public void setValue(int value) throws NotFiveDigitException,NotPalindromeException{
-        if(value/10000<1||value/10000>9){
-                throw new NotFiveDigitException();
+    public void setValue(int value) throws NotFiveDigitException, NotPalindromeException {
+        if (value / 10000 < 1 || value / 10000 > 9) {
+            throw new NotFiveDigitException();
         }
-        if(!isPalindrome(value)){
-                throw new NotPalindromeException();
+        if (!isPalindrome(value)) {
+            throw new NotPalindromeException();
         }
         this.value = value;
     }
 
-    private boolean isPalindrome(int newNum){
-        int tempNum=newNum;
-        int reversedNum=0;
-        while(tempNum>0){
-            reversedNum=reversedNum*10+tempNum%10;
-            tempNum/=10;
+    private boolean isPalindrome(int newNum) {
+        int tempNum = newNum;
+        int reversedNum = 0;
+        while (tempNum > 0) {
+            reversedNum = reversedNum * 10 + tempNum % 10;
+            tempNum /= 10;
         }
-        return reversedNum==newNum;
+        return reversedNum == newNum;
     }
 
-    public class NotFiveDigitException extends Exception{
+    public class NotFiveDigitException extends Exception {
         public NotFiveDigitException() {
             super("Number must be 5 digits");
         }
     }
 
-    public class NotPalindromeException extends Exception{
+    public class NotPalindromeException extends Exception {
         public NotPalindromeException() {
             super("NotPalindrome");
         }
