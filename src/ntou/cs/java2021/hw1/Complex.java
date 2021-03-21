@@ -60,7 +60,11 @@ public class Complex {
     }
 
     public String toString() {
-        return String.format("%.2f + %.2fi", real, imaginary); //should revise
+        if(this.imaginary<0){
+            return String.format("%.2f - %.2fi", real, -1*imaginary); //should revise
+        }else {
+            return String.format("%.2f + %.2fi", real, imaginary); //should revise
+        }
     }
 
 }

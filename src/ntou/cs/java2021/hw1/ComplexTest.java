@@ -8,8 +8,8 @@ public class ComplexTest {
         System.out.printf("Absolute value of a = %.2f\n\n", complexA.absoluteValue());
 
         Complex complexB = new Complex(3.3, -4.4);
-        System.out.println("Conjugates of a = " + complexB.conjugates());
-        System.out.printf("Absolute value of a = %.2f\n\n", complexB.absoluteValue());
+        System.out.println("Conjugates of b = " + complexB.conjugates());
+        System.out.printf("Absolute value of b = %.2f\n\n", complexB.absoluteValue());
 
         System.out.println("a + b = " + complexA.add(complexB));
         System.out.println("a - b = " + complexA.subtract(complexB));
