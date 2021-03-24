@@ -5,6 +5,11 @@ import java.security.SecureRandom;
 
 import static java.lang.Math.sqrt;
 
+
+/*
+ *  by 00857005 周固廷
+ * */
+
 public class Complex {
 
     private double real;

@@ -4,10 +4,16 @@ package ntou.cs.java2021.hw1;
 
 import java.security.SecureRandom;
 
+/*
+ *  by 00857005 周固廷
+ * */
+
 // enum type with constants that represent the game status
 enum Status {CONTINUE, WON, LOST}
 
 public class CrapsAnalysis {
+
+    //分析1000場Craps
     public void analysis1000Games() {
         int[] diceRollingWonTimes = new int[22];
         int[] diceRollingLostTimes = new int[22];
@@ -47,7 +53,7 @@ public class CrapsAnalysis {
     }
 
 
-};
+}
 
 class Craps {
     // create secure random number generator for use in method rollDice
