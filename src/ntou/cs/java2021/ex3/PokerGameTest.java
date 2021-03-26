@@ -13,13 +13,14 @@ public class PokerGameTest {
             int choice = input.nextInt();
             if (choice == 0) break;
 
-            try {
-                if (choice == 1) {
+            if (choice == 1) {
+                try {
                     game.dealFiveCards();
+                } catch (NullPointerException e) {
+                    System.out.println("No card can be dealt, please restart the game!");
                 }
-            } catch (NullPointerException e) {
-                System.out.println("No card can be dealt, please restart the game!");
             }
+
             if (choice == 2) {
                 System.out.println("Game restarted");
                 game.gameInit();
