@@ -6,10 +6,8 @@ package ntou.cs.java2021.hw1;
 
 public class CrapsAnalysisTest {
     public static void main(String[] args) {
-        while (true){
-            CrapsAnalysis crapsAnalysis = new CrapsAnalysis();
-            crapsAnalysis.analysis1000Games();
-        }
+        CrapsAnalysis crapsAnalysis = new CrapsAnalysis();
+        crapsAnalysis.analysis1000Games();
 
     }
 }

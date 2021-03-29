@@ -16,7 +16,6 @@ public class Complex {
     private double imaginary;
 
     public Complex() {
-        //TODO
         SecureRandom secureRandom = new SecureRandom();
         this.real = secureRandom.nextDouble();
         this.imaginary = secureRandom.nextDouble();
@@ -27,15 +26,18 @@ public class Complex {
         this.imaginary = imaginary;
     }
 
+    //虛數的共軛複數
     public Complex conjugates() {
         return new Complex(this.real, this.imaginary * -1.0); //should revise
     }
 
+    //求虛數的絕對值
     public double absoluteValue() {
         double result = sqrt(Math.pow(this.real, 2) + Math.pow(this.imaginary, 2));
-        return Math.round(result * 100.0) / 100.0; //should revise
+        return Math.round(result * 100.0) / 100.0;
     }
 
+    //虛數加法
     public Complex add(Complex x) {
         Complex temp = new Complex(real, imaginary);
         temp.real += x.real;
@@ -43,6 +45,7 @@ public class Complex {
         return temp;
     }
 
+    //虛數減法
     public Complex subtract(Complex x) {
         Complex temp = new Complex(real, imaginary);
         temp.real -= x.real;
@@ -50,6 +53,7 @@ public class Complex {
         return temp; //should revise
     }
 
+    //虛數乘法
     public Complex multiply(Complex x) {
         Complex temp = new Complex();
         temp.real = this.real * x.real - this.imaginary * x.imaginary;
@@ -57,11 +61,12 @@ public class Complex {
         return temp; //should revise
     }
 
+    //虛數除法
     public Complex divide(Complex x) {
         Complex temp = new Complex();
         temp.real = (this.real * x.real + this.imaginary * x.imaginary) / (Math.pow(x.real, 2) + Math.pow(x.imaginary, 2));
         temp.imaginary = (this.imaginary * x.real - this.real * x.imaginary) / (Math.pow(x.real, 2) + Math.pow(x.imaginary, 2));
-        return temp; //should revise
+        return temp;
     }
 
     public String toString() {

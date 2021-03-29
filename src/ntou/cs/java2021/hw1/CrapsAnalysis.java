@@ -48,7 +48,7 @@ public class CrapsAnalysis {
             System.out.printf("%d games won and %d games lost on roll #%d\n", diceRollingWonTimes[i], diceRollingLostTimes[i], i);
         }
         System.out.printf("%d games won and %d games lost on rolls after the 20th roll\n", diceRollingWonTimes[21], diceRollingLostTimes[21]);
-        System.out.printf("The chances of winning are %d / 1000 = %.1f%%\n", winningCounter, (double) winningCounter / 10);
+        System.out.printf("The chances of winning are %d / 1000 = %.2f%%\n", winningCounter, (double) winningCounter / 10);
         System.out.printf("The average game length is %.2f rolls.\n", (double) lengthCounter / 1000);
     }
 

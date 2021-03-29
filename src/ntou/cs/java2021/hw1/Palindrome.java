@@ -31,6 +31,7 @@ public class Palindrome {
         this.value = tempNewNum;
     }
 
+    //檢查長度是不是偶數
     private boolean lengthIsEven(int newNum) {
         int counter = 0;
         while (newNum > 0) {
@@ -40,6 +41,7 @@ public class Palindrome {
         return counter % 2 == 0;
     }
 
+    //檢查是不是回文
     private boolean isPalindrome(int newNum) {
         int tempNum = newNum;
         int reversedNum = 0;
