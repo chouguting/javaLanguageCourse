@@ -9,17 +9,15 @@ public class PokerGame {
 	}
 
 	public void dealFiveCards() {
-		//int pointCounter = 0;
 		Card[] handCard=new Card[5];
 		for (int i = 0; i < 5; i++) {
 			Card newCard = myDeckOfCards.dealCard();
 			handCard[i]=newCard;
-			//System.out.println("You got " + newCard + ", point is " + newCard.getPoint());
-			//pointCounter += newCard.getPoint();
 		}
+		//把抽出的排放到手排中 並判斷牌型
 		HandOfCards handOfCards=CardTypeHandler.produceHandOfCards(handCard);
 		System.out.println(handOfCards);
-		//System.out.println("Your total point is " + pointCounter);
+
 	}
 
 	public void dealTest() {

@@ -3,6 +3,8 @@ package ntou.cs.java2021.hw2;
 import java.util.Arrays;
 
 public class CardTypeHandler {
+
+    //生成手牌
     public static HandOfCards produceHandOfCards(Card[] cards) {
         HandOfCards handOfCards = new HandOfCards();
         handOfCards.setCards(cards);
@@ -10,6 +12,7 @@ public class CardTypeHandler {
         return handOfCards;
     }
 
+    //傳入一堆卡片 回傳這堆卡中有的最大牌型
     private static CardType getType(Card[] cards) {
         CardType cardType = CardType.NONE;
         if (isStraight(cards)&&isFlush(cards)) {
@@ -24,6 +27,7 @@ public class CardTypeHandler {
         return cardType;
     }
 
+    //傳入一個卡片 回傳這個卡面的大小是排在是幾號
     private static int getCardFaceIndex(Card newCard) {
         int index = 0;
         for (String name : DeckOfCards.faces) {
