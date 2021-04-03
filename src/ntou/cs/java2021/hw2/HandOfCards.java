@@ -1,7 +1,10 @@
 package ntou.cs.java2021.hw2;
 
-import java.util.Arrays;
-
+/**
+ * HandOfCards(手牌) 可以存五張牌和一個對應的牌型名稱
+ *
+ * @author 00857005周固廷
+ */
 public class HandOfCards {
     private Card[] cards;
     private CardType type;
@@ -24,14 +27,14 @@ public class HandOfCards {
 
     @Override
     public String toString() {
-        String str="Your Cards: ";
-        for(int i=0;i<this.cards.length;i++){
-            str+=this.cards[i];
-            if(i!=this.cards.length-1)str+=",";
+        String str = "Your Cards: ";
+        for (int i = 0; i < this.cards.length; i++) {
+            str += this.cards[i];
+            if (i != this.cards.length - 1) str += ",";
         }
-        str+="\n";
-        str+="Card type: ";
-        str+=this.type.getName();
+        str += "\n";
+        str += "Card type: ";
+        str += this.type.getName();
         return str;
     }
 }
