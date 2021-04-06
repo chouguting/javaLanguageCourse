@@ -29,11 +29,11 @@ public class PokerGame {
     //測試用的method,能調整,並發出想要的牌組
     public void dealTest() {
         Card[] handCard = new Card[5];
-        handCard[0] = new Card(DeckOfCards.faces[6], DeckOfCards.suits[0]);
-        handCard[1] = new Card(DeckOfCards.faces[6], DeckOfCards.suits[1]);
-        handCard[2] = new Card(DeckOfCards.faces[2], DeckOfCards.suits[2]);
-        handCard[3] = new Card(DeckOfCards.faces[2], DeckOfCards.suits[3]);
-        handCard[4] = new Card(DeckOfCards.faces[2], DeckOfCards.suits[0]);
+        handCard[0] = new Card(DeckOfCards.faces[9], DeckOfCards.suits[0]);
+        handCard[1] = new Card(DeckOfCards.faces[10], DeckOfCards.suits[0]);
+        handCard[2] = new Card(DeckOfCards.faces[11], DeckOfCards.suits[0]);
+        handCard[3] = new Card(DeckOfCards.faces[12], DeckOfCards.suits[0]);
+        handCard[4] = new Card(DeckOfCards.faces[0], DeckOfCards.suits[0]);
 
         HandOfCards handOfCards = CardTypeHandler.produceHandOfCards(handCard);
         System.out.println(handOfCards);

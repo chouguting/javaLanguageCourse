@@ -27,6 +27,11 @@ public class Weapon {
         }
     }
 
+    private static int generateRandomOffense() {
+        SecureRandom secureRandom = new SecureRandom();
+        return secureRandom.nextInt(100000000) + 100000000;
+    }
+
     public int getOffense() {
         return offense;
     }
@@ -35,11 +40,6 @@ public class Weapon {
         if ((0 < offense) && (offense <= MAX_VALUE)) {
             this.offense = offense;
         }
-    }
-
-    private static int generateRandomOffense() {
-        SecureRandom secureRandom = new SecureRandom();
-        return secureRandom.nextInt(100000000) + 100000000;
     }
 
     @Override

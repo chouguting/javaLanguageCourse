@@ -45,7 +45,7 @@ public class Player {
             return;
         }
         myWeapon[weaponCount] = new Weapon();
-        System.out.println(this.name + " made a weapon with offense " + myWeapon[weaponCount].getOffense());
+        System.out.println(this.name + " made a weapon with offense " + String.format("%,d", myWeapon[weaponCount].getOffense()));
         weaponCount += 1;
     }
 
@@ -56,9 +56,9 @@ public class Player {
             return;
         }
         myWeapon[weaponCount] = new Weapon(myWeapon[weaponCount - 1]);
-        System.out.println(this.name + " cloned a weapon with offense " + myWeapon[weaponCount].getOffense());
+        System.out.println(this.name + " cloned a weapon with offense " + String.format("%,d", myWeapon[weaponCount].getOffense()));
         myWeapon[weaponCount - 1].setOffense((int) (myWeapon[weaponCount - 1].getOffense() * 0.9));
-        System.out.println("Batman's weapon#" + weaponCount + " becomes: a weapon with offense " + myWeapon[weaponCount - 1].getOffense());
+        System.out.println("Batman's weapon#" + weaponCount + " becomes: a weapon with offense " + String.format("%,d", myWeapon[weaponCount - 1].getOffense()));
         weaponCount += 1;
     }
 

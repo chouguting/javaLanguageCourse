@@ -8,15 +8,14 @@ import java.security.SecureRandom;
  * @author 00857005周固廷(code由老師提供)
  */
 public class DeckOfCards {
-    private Card[] deck; // array of Card objects
-    private int currentCard; // index of next Card to be dealt (0-51)
     private static final int NUMBER_OF_CARDS = 52; // constant # of Cards
     // random number generator
     private static final SecureRandom randomNumbers = new SecureRandom();
-
     public static String[] faces = {"Ace", "Deuce", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten",
             "Jack", "Queen", "King"};
     public static String[] suits = {"Hearts", "Diamonds", "Clubs", "Spades"};
+    private Card[] deck; // array of Card objects
+    private int currentCard; // index of next Card to be dealt (0-51)
 
     // constructor fills deck of Cards
     public DeckOfCards() {
