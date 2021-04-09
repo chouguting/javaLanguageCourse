@@ -1,8 +1,6 @@
 package testing;
 
 
-import ntou.cs.java2021.ex3.Card;
-
 public class Main {
     public static void main(String[] args){
         Complex complex1=new Complex(2,4);
