@@ -23,7 +23,6 @@ public class PokerGame {
         //把抽出的排放到手排中 並判斷牌型
         HandOfCards handOfCards = CardTypeHandler.produceHandOfCards(handCard);
         System.out.println(handOfCards);
-
     }
 
     //測試用的method,能調整,並發出想要的牌組

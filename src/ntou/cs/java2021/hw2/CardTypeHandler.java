@@ -24,7 +24,8 @@ public class CardTypeHandler {
             cardType = CardType.STRAIGHT_FLUSH;
         } else if (howManyXOfAKind(cards, 4) == 1) {
             cardType = CardType.FOUR_OF_A_KIND;
-        } else if (howManyXOfAKind(cards, 3) == 1 && howManyXOfAKind(cards, 2) == 1) {
+        } else if (howManyXOfAKind(cards, 3) == 1 &&
+                howManyXOfAKind(cards, 2) == 1) {
             cardType = CardType.FULL_HOUSE;
         } else if (howManyXOfAKind(cards, 2) >= 1) {
             cardType = CardType.ONE_PAIR;
@@ -73,7 +74,9 @@ public class CardTypeHandler {
             straightCount += 1;
         }
         //special case: 10,J,Q,K,A
-        if (straightCount == cardIndexList.length - 1 && cardIndexList[0] == 0 && cardIndexList[cardIndexList.length - 1] == 12) {
+        if (straightCount == cardIndexList.length - 1 &&
+                cardIndexList[0] == 0 &&
+                cardIndexList[cardIndexList.length - 1] == 12) {
             isStraight = true;
         }
         return isStraight;
