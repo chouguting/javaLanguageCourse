@@ -72,11 +72,11 @@ public class War {
 
 		if (player1 == npc) {
 			System.out.println("NPC攻擊前：\n" +
-					"HP of USER: " + user.getHp());
+                    "HP of USER: " + String.format("%.1f", user.getHp()));
 
 		} else {
-			System.out.println("USER攻擊前：\n" +
-					"HP of NPC: " + npc.getHp());
+            System.out.println("USER攻擊前：\n" +
+                    "HP of NPC: " + String.format("%.1f", npc.getHp()));
 		}
 
 		double player1Attack = (player1.attack() - player2.defend() * defenseRate);
@@ -87,12 +87,12 @@ public class War {
 		player2.setHp(player2.getHp() - player1Attack);
 
 		if (player1 == npc) {
-			System.out.println("NPC攻擊後：\n" +
-					"HP of USER: " + user.getHp());
+            System.out.println("NPC攻擊後：\n" +
+                    "HP of USER: " + String.format("%.1f", user.getHp()));
 
 		} else {
-			System.out.println("USER攻擊後：\n" +
-					"HP of NPC: " + npc.getHp());
+            System.out.println("USER攻擊後：\n" +
+                    "HP of NPC: " + String.format("%.1f", npc.getHp()));
 		}
 	}
 
