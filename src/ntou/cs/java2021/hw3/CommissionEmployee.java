@@ -5,6 +5,8 @@ import java.util.Scanner;
 /**
  * CommissionEmployee:用佣金抽成計算的員工
  * 可輸入資料及取得薪水
+ *
+ * @author 00857005 周固廷
  */
 public class CommissionEmployee extends Employee {
     private double commisionRate;

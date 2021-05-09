@@ -5,6 +5,8 @@ import java.util.ArrayList;
 
 /**
  * HW3-2的程式進入點
+ *
+ * @author 00857005 周固廷
  */
 public class WarTest {
 	public static void main(String args[]) {

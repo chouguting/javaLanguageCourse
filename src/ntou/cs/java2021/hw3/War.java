@@ -7,6 +7,8 @@ import java.util.Scanner;
 /**
  * War:兩個玩家實際對戰的CLASS
  * 提供對戰、自我治療、判斷獲勝等方法
+ *
+ * @author 00857005 周固廷
  */
 public class War {
 	public static final int ATTACK = 1;

@@ -4,6 +4,8 @@ package ntou.cs.java2021.hw3;
  * ATK: 所有可攻擊物件的INTERFACE
  * 要求提供計算攻擊和防守的功能
  * 另外提供攻擊和防守的輸出字串
+ *
+ * @author 00857005 周固廷
  */
 public interface ATK {
 	double attack();

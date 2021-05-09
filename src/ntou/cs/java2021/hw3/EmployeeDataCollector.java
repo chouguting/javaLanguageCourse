@@ -5,6 +5,8 @@ import java.util.Scanner;
 
 /**
  * EmployeeDataCollector: 提供輸入介面 讓用戶輸入資料 及顯示結果
+ *
+ * @author 00857005 周固廷
  */
 public class EmployeeDataCollector {
 

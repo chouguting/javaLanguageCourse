@@ -5,6 +5,8 @@ import java.util.Scanner;
 /**
  * PieceWorker:臨時工,用工作量計算工資
  * 可輸入資料及取得薪水
+ *
+ * @author 00857005 周固廷
  */
 public class PieceWorker extends Employee {
     private int wage;

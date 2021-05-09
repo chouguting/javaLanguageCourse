@@ -4,6 +4,8 @@ import java.security.SecureRandom;
 
 /**
  * DoubleWeapon:攻擊力有機會加倍的武器,可取得攻擊力及防禦力
+ *
+ * @author 00857005 周固廷
  */
 public class DoubleWeapon extends Weapon {
     private boolean hasDoubled = false;

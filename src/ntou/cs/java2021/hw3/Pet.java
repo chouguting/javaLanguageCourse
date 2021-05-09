@@ -4,6 +4,8 @@ import java.security.SecureRandom;
 
 /**
  * Pet:寵物，帶有攻擊力的物件,可取得攻擊力及防禦力
+ *
+ * @author 00857005 周固廷
  */
 public class Pet implements ATK {
 	private int maxAttack;

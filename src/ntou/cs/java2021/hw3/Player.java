@@ -5,6 +5,8 @@ import java.util.ArrayList;
 /**
  * Player:一個玩家,可輸入輸出基本資料
  * 計算總攻擊力和防禦力
+ *
+ * @author 00857005 周固廷
  */
 public class Player {
 	public static final double MAX_HP = 1999;

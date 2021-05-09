@@ -5,6 +5,8 @@ import java.util.Scanner;
 /**
  * HourlyEmployee:以小時和時薪計算薪水的員工
  * 可輸入資料及取得薪水
+ *
+ * @author 00857005 周固廷
  */
 public class HourlyEmployee extends Employee {
     private int wage;
