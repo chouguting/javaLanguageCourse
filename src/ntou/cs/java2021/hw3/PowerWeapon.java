@@ -7,6 +7,6 @@ public class PowerWeapon extends Weapon {
 
     @Override
     public double attack() {
-        return this.getOffense() * 1.2;
+        return Math.round(this.getOffense() * 1.2);
     }
 }

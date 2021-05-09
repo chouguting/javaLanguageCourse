@@ -2,6 +2,10 @@ package ntou.cs.java2021.hw3;
 
 import java.util.Scanner;
 
+/**
+ * CommissionEmployee:用佣金抽成計算的員工
+ * 可輸入資料及取得薪水
+ */
 public class CommissionEmployee extends Employee {
     private double commisionRate;
     private int grossSales;

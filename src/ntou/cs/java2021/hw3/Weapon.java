@@ -1,5 +1,8 @@
 package ntou.cs.java2021.hw3;
 
+/**
+ * Weapon:一個可攻擊的武器 可設定、取得 攻擊力及防禦力
+ */
 public abstract class Weapon implements ATK {
 
 	public static double MAX_VALUE = 255;

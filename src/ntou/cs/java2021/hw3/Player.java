@@ -2,6 +2,10 @@ package ntou.cs.java2021.hw3;
 
 import java.util.ArrayList;
 
+/**
+ * Player:一個玩家,可輸入輸出基本資料
+ * 計算總攻擊力和防禦力
+ */
 public class Player {
 	public static final double MAX_HP = 1999;
 	public static final int DEFAULT_HP = 200;

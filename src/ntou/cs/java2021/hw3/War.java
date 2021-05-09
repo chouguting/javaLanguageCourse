@@ -4,6 +4,10 @@ import java.security.SecureRandom;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/**
+ * War:兩個玩家實際對戰的CLASS
+ * 提供對戰、自我治療、判斷獲勝等方法
+ */
 public class War {
 	public static final int ATTACK = 1;
 	public static final int DEFEND = 2;
@@ -72,11 +76,11 @@ public class War {
 
 		if (player1 == npc) {
 			System.out.println("NPC攻擊前：\n" +
-                    "HP of USER: " + String.format("%.1f", user.getHp()));
+					"HP of USER: " + String.format("%.1f", user.getHp()));
 
 		} else {
-            System.out.println("USER攻擊前：\n" +
-                    "HP of NPC: " + String.format("%.1f", npc.getHp()));
+			System.out.println("USER攻擊前：\n" +
+					"HP of NPC: " + String.format("%.1f", npc.getHp()));
 		}
 
 		double player1Attack = (player1.attack() - player2.defend() * defenseRate);
@@ -87,12 +91,12 @@ public class War {
 		player2.setHp(player2.getHp() - player1Attack);
 
 		if (player1 == npc) {
-            System.out.println("NPC攻擊後：\n" +
-                    "HP of USER: " + String.format("%.1f", user.getHp()));
+			System.out.println("NPC攻擊後：\n" +
+					"HP of USER: " + String.format("%.1f", user.getHp()));
 
 		} else {
-            System.out.println("USER攻擊後：\n" +
-                    "HP of NPC: " + String.format("%.1f", npc.getHp()));
+			System.out.println("USER攻擊後：\n" +
+					"HP of NPC: " + String.format("%.1f", npc.getHp()));
 		}
 	}
 
@@ -104,11 +108,11 @@ public class War {
 
 	public boolean determineVictory(Player user, Player npc) {
 		if (user.getHp() <= 0) {
-			System.out.println("玩家被NPC擊倒了！");
+			System.out.println("\n玩家被NPC擊倒了！");
 			return true;
 		}
 		if (npc.getHp() <= 0) {
-			System.out.println("玩家擊倒了NPC！");
+			System.out.println("\n玩家擊倒了NPC！");
 			return true;
 		}
 		return false;

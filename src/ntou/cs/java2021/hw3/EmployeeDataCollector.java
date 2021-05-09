@@ -3,6 +3,9 @@ package ntou.cs.java2021.hw3;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * EmployeeDataCollector: 提供輸入介面 讓用戶輸入資料 及顯示結果
+ */
 public class EmployeeDataCollector {
 
 	private Scanner input = new Scanner(System.in);
@@ -44,8 +47,8 @@ public class EmployeeDataCollector {
 		int counter = 1;
 		int totalEarnings = 0;
 		int totalBonus = 0;
+		System.out.println("---Result:");
 		for (Employee employee : list) {
-			System.out.println("---Result:");
 			System.out.printf("No. %d:\n", counter++);
 			System.out.println(employee);
 			totalEarnings += employee.getEarnings();

@@ -2,6 +2,10 @@ package ntou.cs.java2021.hw3;
 
 import java.util.Scanner;
 
+/**
+ * HourlyEmployee:以小時和時薪計算薪水的員工
+ * 可輸入資料及取得薪水
+ */
 public class HourlyEmployee extends Employee {
     private int wage;
     private int hours;

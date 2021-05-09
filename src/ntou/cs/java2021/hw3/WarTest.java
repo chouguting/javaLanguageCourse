@@ -3,6 +3,9 @@ package ntou.cs.java2021.hw3;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 
+/**
+ * HW3-2的程式進入點
+ */
 public class WarTest {
 	public static void main(String args[]) {
 		SecureRandom random = new SecureRandom();
