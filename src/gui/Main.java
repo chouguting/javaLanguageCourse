@@ -1,11 +1,8 @@
 package gui;
 
-import javax.swing.*;
-import java.awt.*;
-
 public class Main {
     public static void main(String[] args) {
-        JFrame frame = new JFrame();
+        /*JFrame frame = new JFrame();
         frame.setLayout(new FlowLayout());
         frame.setSize(300, 400);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -13,6 +10,7 @@ public class Main {
 
         ImageIcon imageIcon = new ImageIcon("src/gui/smile.png");
         frame.add(new JLabel("label2", imageIcon, JLabel.HORIZONTAL));
-        frame.setVisible(true);
+        frame.setVisible(true);*/
+        new MyLabelFrame();
     }
 }
