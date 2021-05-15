@@ -1,3 +1,0 @@
-Manifest-Version: 1.0
-Main-Class: ntou.cs.java2021.hw4.MaskSearchTest
-

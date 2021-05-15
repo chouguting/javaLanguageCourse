@@ -1,18 +1,18 @@
 <component name="ArtifactManager">
-  <artifact type="jar" name="maskSearch:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/maskSearch_jar</output-path>
+  <artifact type="jar" name="javaLanguageCourse:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/javaLanguageCourse_jar</output-path>
     <root id="archive" name="javaLanguageCourse.jar">
       <element id="module-output" name="javaLanguageCourse" />
       <element id="extracted-dir" path="$PROJECT_DIR$/jar_files/gson-2.8.6.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/jar_files/ow2-asm-6.2.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/jar_files/sfm-csv-8.2.3.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/jar_files/sfm-map-8.2.3.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/jar_files/sfm-util-8.2.3.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/jar_files/sfm-tuples-8.2.3.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/jar_files/sfm-reflect-8.2.3.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/jar_files/jackson-core-2.10.3.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/jar_files/lightning-csv-8.2.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/jar_files/ow2-asm-6.2.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/jar_files/sfm-converter-8.2.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/jar_files/sfm-csv-8.2.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/jar_files/sfm-map-8.2.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/jar_files/sfm-reflect-8.2.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/jar_files/sfm-tuples-8.2.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/jar_files/sfm-util-8.2.3.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>
