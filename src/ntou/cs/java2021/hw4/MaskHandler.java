@@ -17,105 +17,111 @@ import java.util.stream.Collectors;
 
 // References: https://gist.github.com/arnaudroger/7cbb9ca1acda66341fc10bf54ab01439
 
+/**
+ * MaskHandler: 提供口罩庫存資訊
+ * 可從網路上擷取資料
+ * 可利用提供的資料 回傳藥局的口罩庫存
+ * 00857005 周固廷
+ */
 public class MaskHandler {
-	private static final String dataURL = "https://data.nhi.gov.tw/Datasets/Download.ashx?rid=A21030000I-D50001-001&l=https://data.nhi.gov.tw/resource/mask/maskdata.csv";
-	private static final String fileName = "maskdata.csv"; // if the link is unavailable
+    private static final String dataURL = "https://data.nhi.gov.tw/Datasets/Download.ashx?rid=A21030000I-D50001-001&l=https://data.nhi.gov.tw/resource/mask/maskdata.csv";
+    private static final String fileName = "maskdata.csv"; // if the link is unavailable
 
-	private List<Pharmacy> pharmacyList;
+    private List<Pharmacy> pharmacyList;
 
-	private Map<String, String> constructFieldNameTranslationMap() {
-		Map<String, String> fieldNameTranslationMap = new HashMap<String, String>();
-		fieldNameTranslationMap.put("﻿醫事機構代碼", "id");
-		fieldNameTranslationMap.put("醫事機構名稱", "name");
-		fieldNameTranslationMap.put("醫事機構地址", "address");
-		fieldNameTranslationMap.put("醫事機構電話", "phone");
-		fieldNameTranslationMap.put("成人口罩剩餘數", "numberOfAdultMasks");
-		fieldNameTranslationMap.put("兒童口罩剩餘數", "numberOfChildrenMasks");
-		fieldNameTranslationMap.put("來源資料時間", "updatedTime");
+    private Map<String, String> constructFieldNameTranslationMap() {
+        Map<String, String> fieldNameTranslationMap = new HashMap<String, String>();
+        fieldNameTranslationMap.put("﻿醫事機構代碼", "id");
+        fieldNameTranslationMap.put("醫事機構名稱", "name");
+        fieldNameTranslationMap.put("醫事機構地址", "address");
+        fieldNameTranslationMap.put("醫事機構電話", "phone");
+        fieldNameTranslationMap.put("成人口罩剩餘數", "numberOfAdultMasks");
+        fieldNameTranslationMap.put("兒童口罩剩餘數", "numberOfChildrenMasks");
+        fieldNameTranslationMap.put("來源資料時間", "updatedTime");
 
-		return fieldNameTranslationMap;
-	}
+        return fieldNameTranslationMap;
+    }
 
-	public String produceStringFromURL(String requestURL) throws IOException {
-		try (Scanner scanner = new Scanner(new URL(requestURL).openStream(), StandardCharsets.UTF_8.toString())) {
-			scanner.useDelimiter("\\A");
-			return scanner.hasNext() ? scanner.next() : "";
-		}
-	}
+    public String produceStringFromURL(String requestURL) throws IOException {
+        try (Scanner scanner = new Scanner(new URL(requestURL).openStream(), StandardCharsets.UTF_8.toString())) {
+            scanner.useDelimiter("\\A");
+            return scanner.hasNext() ? scanner.next() : "";
+        }
+    }
 
-	public String produceStringFromFile(String fileName) throws IOException {
-		InputStream is = new FileInputStream(fileName);
-		BufferedReader buf = new BufferedReader(new InputStreamReader(is));
-		String line = buf.readLine();
-		StringBuilder sb = new StringBuilder();
-		while (line != null) {
-			sb.append(line).append("\n");
-			line = buf.readLine();
-		}
-		buf.close();
-		return sb.toString();
-	}
+    public String produceStringFromFile(String fileName) throws IOException {
+        InputStream is = new FileInputStream(fileName);
+        BufferedReader buf = new BufferedReader(new InputStreamReader(is));
+        String line = buf.readLine();
+        StringBuilder sb = new StringBuilder();
+        while (line != null) {
+            sb.append(line).append("\n");
+            line = buf.readLine();
+        }
+        buf.close();
+        return sb.toString();
+    }
 
-	public String produceDataJson(String csvContent) throws IOException, URISyntaxException {
+    public String produceDataJson(String csvContent) throws IOException, URISyntaxException {
 
-		Map<String, String> fieldNameTranslationMap = constructFieldNameTranslationMap();
-		org.simpleflatmapper.lightningcsv.CsvReader reader = CsvParser.reader(csvContent);
+        Map<String, String> fieldNameTranslationMap = constructFieldNameTranslationMap();
+        org.simpleflatmapper.lightningcsv.CsvReader reader = CsvParser.reader(csvContent);
 
-		JsonFactory jsonFactory = new JsonFactory();
-		ByteArrayOutputStream output = new ByteArrayOutputStream();
-		Iterator<String[]> iterator = reader.iterator();
-		String[] headers = iterator.next();
+        JsonFactory jsonFactory = new JsonFactory();
+        ByteArrayOutputStream output = new ByteArrayOutputStream();
+        Iterator<String[]> iterator = reader.iterator();
+        String[] headers = iterator.next();
 
-		try (JsonGenerator jsonGenerator = jsonFactory.createGenerator(new PrintStream(output))) {
+        try (JsonGenerator jsonGenerator = jsonFactory.createGenerator(new PrintStream(output))) {
 
-			jsonGenerator.setPrettyPrinter(new DefaultPrettyPrinter());
-			jsonGenerator.writeStartArray();
+            jsonGenerator.setPrettyPrinter(new DefaultPrettyPrinter());
+            jsonGenerator.writeStartArray();
 
-			while (iterator.hasNext()) {
-				jsonGenerator.writeStartObject();
-				String[] values = iterator.next();
-				int nbCells = Math.min(values.length, headers.length);
-				for (int i = 0; i < nbCells; i++) {
-					jsonGenerator.writeFieldName(fieldNameTranslationMap.get(headers[i]));
-					jsonGenerator.writeString(values[i]);
-				}
-				jsonGenerator.writeEndObject();
-			}
-			jsonGenerator.writeEndArray();
-		}
+            while (iterator.hasNext()) {
+                jsonGenerator.writeStartObject();
+                String[] values = iterator.next();
+                int nbCells = Math.min(values.length, headers.length);
+                for (int i = 0; i < nbCells; i++) {
+                    jsonGenerator.writeFieldName(fieldNameTranslationMap.get(headers[i]));
+                    jsonGenerator.writeString(values[i]);
+                }
+                jsonGenerator.writeEndObject();
+            }
+            jsonGenerator.writeEndArray();
+        }
 
-		return output.toString();
-	}
+        return output.toString();
+    }
 
-	public List<Pharmacy> convertToObjects(String jsonData) {
+    public List<Pharmacy> convertToObjects(String jsonData) {
 
-		Gson gson = new Gson();
-		ArrayList<Pharmacy> clinicList = new ArrayList<Pharmacy>();
+        Gson gson = new Gson();
+        ArrayList<Pharmacy> clinicList = new ArrayList<Pharmacy>();
 
-		try {
-			Type listType = new TypeToken<List<Pharmacy>>() {
-			}.getType();
-			clinicList = gson.fromJson(jsonData, listType);
-		} catch (Exception e) {
-			System.err.println("Exception: " + e);
-		}
-		return clinicList;
-	}
+        try {
+            Type listType = new TypeToken<List<Pharmacy>>() {
+            }.getType();
+            clinicList = gson.fromJson(jsonData, listType);
+        } catch (Exception e) {
+            System.err.println("Exception: " + e);
+        }
+        return clinicList;
+    }
 
-	public List<Pharmacy> findPharmacies(String queryName, String queryAddress) {
-		List<Pharmacy> matchingElements = pharmacyList.stream().filter(
-				str -> str.getName().trim().contains(queryName) && str.getAddress().trim().contains(queryAddress))
-				.collect(Collectors.toList());
+    public List<Pharmacy> findPharmacies(String queryName, String queryAddress) {
+        List<Pharmacy> matchingElements = pharmacyList.stream().filter(
+                str -> str.getName().trim().contains(queryName) && str.getAddress().trim().contains(queryAddress))
+                .collect(Collectors.toList());
 
-		return matchingElements;
-	}
+        return matchingElements;
+    }
 
-	public void initialize() throws IOException, URISyntaxException {
+    public void initialize() throws IOException, URISyntaxException {
 
-		String maskData = produceStringFromURL(dataURL);
-		// String maskData = produceStringFromFile(fileName);
-		String maskDataJson = produceDataJson(maskData);
-		pharmacyList = convertToObjects(maskDataJson);
-	}
+        String maskData = produceStringFromURL(dataURL);
+        // String maskData = produceStringFromFile(fileName);
+        String maskDataJson = produceDataJson(maskData);
+        pharmacyList = convertToObjects(maskDataJson);
+    }
 
 }
