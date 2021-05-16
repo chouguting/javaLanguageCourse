@@ -24,6 +24,8 @@ public class MaskSearchFrame extends JFrame implements ActionListener {
 
     private final JPanel infoArea;
 
+    JButton testButton;
+
     public MaskSearchFrame() {
         maskHandler = new MaskHandler();
         try {
@@ -39,6 +41,12 @@ public class MaskSearchFrame extends JFrame implements ActionListener {
         searchName = new JTextField("輸入藥局名稱(如百福)", 20);
         searchButton = new JButton("搜尋藥局");
         refreshButton = new JButton("更新資料");
+
+
+        testButton = new JButton("Test");
+        header.add(testButton);
+        testButton.addActionListener(this);
+
 
         searchButton.addActionListener(this);
         refreshButton.addActionListener(this);
@@ -84,6 +92,9 @@ public class MaskSearchFrame extends JFrame implements ActionListener {
             } catch (URISyntaxException uriSyntaxException) {
                 uriSyntaxException.printStackTrace();
             }
+        }
+        if (e.getSource() == testButton) {
+            JOptionPane.showMessageDialog(this, maskHandler.getMaskData());
         }
     }
 }

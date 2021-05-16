@@ -28,6 +28,7 @@ public class MaskHandler {
     private static final String fileName = "maskdata.csv"; // if the link is unavailable
 
     private List<Pharmacy> pharmacyList;
+    private String maskData;
 
     private Map<String, String> constructFieldNameTranslationMap() {
         Map<String, String> fieldNameTranslationMap = new HashMap<String, String>();
@@ -118,10 +119,17 @@ public class MaskHandler {
 
     public void initialize() throws IOException, URISyntaxException {
 
-        String maskData = produceStringFromURL(dataURL);
+        maskData = produceStringFromURL(dataURL);
         // String maskData = produceStringFromFile(fileName);
         String maskDataJson = produceDataJson(maskData);
         pharmacyList = convertToObjects(maskDataJson);
     }
 
+    public String getMaskData() {
+        String str = "";
+        for (Pharmacy pharmacy : pharmacyList) {
+            str += pharmacy + "\n";
+        }
+        return str;
+    }
 }
