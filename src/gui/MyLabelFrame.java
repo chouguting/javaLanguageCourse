@@ -15,6 +15,7 @@ public class MyLabelFrame extends JFrame {
             @Override
             public void itemStateChanged(ItemEvent e) {
                 if (e.getStateChange() == ItemEvent.SELECTED) {
+
                     System.out.println(theBox.getSelectedIndex());
                 }
             }

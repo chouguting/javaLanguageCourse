@@ -44,7 +44,7 @@ public class MaskSearchFrame extends JFrame implements ActionListener {
 
 
         testButton = new JButton("Test");
-        header.add(testButton);
+        //header.add(testButton);
         testButton.addActionListener(this);
 
 
