@@ -1,0 +1,13 @@
+Stephen Curry 43,006,362
+Russell Westbrook 41,358,814
+Chris Paul 41,358,814
+James Harden 41,254,920
+John Wall 41,254,920
+Kevin Durant 40,108,950
+LeBron James 39,219,565
+Paul George 35,450,412
+Klay Thompson 35,361,360
+Mike Conley 34,502,130
+Gordon Zhou 100
+AAA BB 10,000,000
+Mickey Haung 200,000
